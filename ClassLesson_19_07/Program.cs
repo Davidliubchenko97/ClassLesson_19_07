@@ -55,21 +55,21 @@ namespace ClassLesson_19_07
                 }
                 //Console.WriteLine(Cities[l].NameCiti + "(" + Cities[l].People + ")" + Cities[l].S);
             }
-            int x = Convert.ToInt32(Cities[0].People);
-            int xx = Convert.ToInt32(Cities[1].People);
-            int xxx = Convert.ToInt32(Cities[2].People);
+            decimal x = decimal.Parse(Cities[0].People);
+            decimal xx = decimal.Parse(Cities[1].People);
+            decimal xxx = decimal.Parse(Cities[2].People);
 
             if (x >= xx && x >= xxx)
             {
-                Console.WriteLine("Most populated:" + Cities[0].NameCiti + "(" + Cities[0].People + ")");
+                Console.WriteLine("Most populated:" + Cities[0].NameCiti + "(" + Cities[0].People + " people)");
             }
             else if (xx >= x && xx >= xxx)
             {
-                Console.WriteLine("Most populated:" + Cities[1].NameCiti + "(" + Cities[1].People + ")");
+                Console.WriteLine("Most populated:" + Cities[1].NameCiti + "(" + Cities[1].People + " people)");
             }
             else
             {
-                Console.WriteLine("Most populated:" + Cities[2].NameCiti + "(" + Cities[2].People + ")");
+                Console.WriteLine("Most populated:" + Cities[2].NameCiti + "(" + Cities[2].People + " people)");
             }
 
             int q = Cities[0].NameCiti.Length;
@@ -77,29 +77,31 @@ namespace ClassLesson_19_07
             int qqq = Cities[2].NameCiti.Length;
             if (q >= qq && q >= qqq)
             {
-                Console.WriteLine("Longest name:" + Cities[0].NameCiti + "(" + q + "letters)");
+                Console.WriteLine("Longest name:" + Cities[0].NameCiti + "(" + q + " letters)");
             }
             else if (qq >= q && qq >= qqq)
             {
-                Console.WriteLine("Longest name:" + Cities[0].NameCiti + "(" + qq + "letters)");
+                Console.WriteLine("Longest name:" + Cities[0].NameCiti + "(" + qq + " letters)");
             }
             else
             {
-                Console.WriteLine("Longest name:" + Cities[0].NameCiti + "(" + qqq + "letters)");
+                Console.WriteLine("Longest name:" + Cities[0].NameCiti + "(" + qqq + " letters)");
             }
-            int w= Convert.ToInt32(Cities[0].S);
-            int ww = Convert.ToInt32(Cities[1].S);
-            int www = Convert.ToInt32(Cities[2].S);
-            double t = q / w;
-            double tt = qq / ww;
-            double ttt = qqq / www;
-
+            decimal w = decimal.Parse(Cities[0].S);
+            decimal ww = decimal.Parse(Cities[1].S);
+            decimal www = decimal.Parse(Cities[2].S);
+            
+            
+            
+            decimal t = (x/w);
+            decimal tt = (xx/ww);
+            decimal ttt = (xxx/www);
+            //Kharkiv=1431000,350;Kiev=2804000,839;Las Vegas=603400,352
+            
             Console.WriteLine("Density:");
-            Console.WriteLine("       "+ Cities[0].NameCiti+"-"+t);
-            Console.WriteLine("       " + Cities[1].NameCiti + "-" + tt);
-            Console.WriteLine("       " + Cities[1].NameCiti + "-" + ttt);
-
-
+            Console.WriteLine("       "+ Cities[0].NameCiti+"-"+ "{0:0.00}", t); 
+            Console.WriteLine("       " + Cities[1].NameCiti + "-"+ "{0:0.00}", tt); 
+            Console.WriteLine("       " + Cities[2].NameCiti + "-"+ "{0:0.00}", ttt);
             Console.ReadKey();
         }
     }
